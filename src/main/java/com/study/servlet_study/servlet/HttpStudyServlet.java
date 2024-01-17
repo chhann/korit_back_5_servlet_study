@@ -42,6 +42,7 @@ public class HttpStudyServlet extends HttpServlet {
 		request.getParameterMap().forEach((k,v) -> {
 			StringBuilder builder = new StringBuilder();
 			
+			
 			Arrays.asList(v).forEach(value -> builder.append(value));
 			
 			paramsMap.put(k, builder.toString());
@@ -63,8 +64,8 @@ public class HttpStudyServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Map<String, String> paramsMap = ParamsConverter.covertParamsMapToMap(request.getParameterMap());
 		
-		
 		System.out.println(paramsMap);
+		
 	}
 
 	
